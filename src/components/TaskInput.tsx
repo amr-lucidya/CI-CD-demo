@@ -1,25 +1,25 @@
-import { useState, type FormEvent } from 'react'
-import type { Priority } from '../lib/tasks'
+import { useState, type FormEvent } from "react";
+import type { Priority } from "../lib/tasks";
 
 interface TaskInputProps {
-  onAdd: (title: string, priority: Priority) => void
+  onAdd: (title: string, priority: Priority) => void;
 }
 
 export function TaskInput({ onAdd }: TaskInputProps) {
-  const [title, setTitle] = useState('')
-  const [priority, setPriority] = useState<Priority>('medium')
-  const [error, setError] = useState('')
+  const [title, setTitle] = useState("");
+  const [priority, setPriority] = useState<Priority>("medium");
+  const [error, setError] = useState("");
 
   function handleSubmit(e: FormEvent) {
-    e.preventDefault()
+    e.preventDefault();
     if (title.trim().length === 0) {
-      setError('Please enter a task')
-      return
+      setError("Please enter a task");
+      return;
     }
-    onAdd(title, priority)
-    setTitle('')
-    setPriority('medium')
-    setError('')
+    onAdd(title, priority);
+    setTitle("");
+    setPriority("medium");
+    setError("");
   }
 
   return (
@@ -30,8 +30,8 @@ export function TaskInput({ onAdd }: TaskInputProps) {
         aria-label="Task title"
         value={title}
         onChange={(e) => {
-          setTitle(e.target.value)
-          if (error) setError('')
+          setTitle(e.target.value);
+          if (error) setError("");
         }}
       />
       <select
@@ -50,5 +50,5 @@ export function TaskInput({ onAdd }: TaskInputProps) {
         </p>
       )}
     </form>
-  )
+  );
 }

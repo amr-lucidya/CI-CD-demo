@@ -7,13 +7,13 @@ are intentionally left out so they can be added live during the talk.
 
 ## Stack
 
-| Concern        | Tool                              |
-| -------------- | --------------------------------- |
-| Build / dev    | Vite 8                            |
-| UI             | React 19 + TypeScript             |
-| Unit tests     | Vitest + Testing Library + jsdom  |
-| E2E tests      | Playwright (Chromium)             |
-| Lint           | oxlint                            |
+| Concern     | Tool                             |
+| ----------- | -------------------------------- |
+| Build / dev | Vite 8                           |
+| UI          | React 19 + TypeScript            |
+| Unit tests  | Vitest + Testing Library + jsdom |
+| E2E tests   | Playwright (Chromium)            |
+| Lint        | oxlint                           |
 
 ## Project structure
 

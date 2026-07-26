@@ -36,7 +36,7 @@
   align-items: center;
 }
 
-.task-input input[type='text'] {
+.task-input input[type="text"] {
   padding: 0.65rem 0.85rem;
   border-radius: 10px;
   border: 1px solid var(--border);

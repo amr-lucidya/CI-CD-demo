@@ -1,7 +1,7 @@
-import type { TaskStats } from '../lib/tasks'
+import type { TaskStats } from "../lib/tasks";
 
 interface StatsBarProps {
-  stats: TaskStats
+  stats: TaskStats;
 }
 
 export function StatsBar({ stats }: StatsBarProps) {
@@ -21,5 +21,5 @@ export function StatsBar({ stats }: StatsBarProps) {
         <span className="progress__label">{stats.percentComplete}%</span>
       </div>
     </div>
-  )
+  );
 }
