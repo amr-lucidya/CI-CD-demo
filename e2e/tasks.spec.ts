@@ -101,3 +101,9 @@ test('"Clear completed" is disabled when nothing is completed', async ({ page })
   await addTask(page, 'Just one')
   await expect(page.getByRole('button', { name: 'Clear completed' })).toBeDisabled()
 })
+
+test('DEMO — this test is designed to fail the CI e2e step', async ({ page }) => {
+  await addTask(page, 'Real task')
+  // The app never creates a task with this title, so the assertion fails.
+  await expect(page.getByText('This task does not exist')).toBeVisible()
+})
