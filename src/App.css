@@ -1,0 +1,237 @@
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.app__header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.app__header h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  letter-spacing: -0.02em;
+}
+
+.app__subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.35);
+}
+
+/* --- input --- */
+.task-input {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.task-input input[type='text'] {
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: inherit;
+  font-size: 1rem;
+}
+
+.task-input select {
+  padding: 0.65rem 0.6rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: inherit;
+}
+
+.task-input button {
+  padding: 0.65rem 1.15rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.task-input button:hover {
+  filter: brightness(1.08);
+}
+
+.task-input .error {
+  grid-column: 1 / -1;
+  margin: 0.15rem 0 0;
+  color: var(--danger);
+  font-size: 0.85rem;
+}
+
+/* --- stats --- */
+.stats-bar {
+  margin: 1.25rem 0;
+}
+
+.stats-bar__numbers {
+  display: flex;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.progress {
+  position: relative;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--track);
+  overflow: hidden;
+}
+
+.progress__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #22d3ee);
+  transition: width 0.25s ease;
+}
+
+.progress__label {
+  position: absolute;
+  right: 0;
+  top: -1.35rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* --- filters --- */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filter-bar__group {
+  display: inline-flex;
+  gap: 0.25rem;
+  background: var(--track);
+  padding: 0.25rem;
+  border-radius: 10px;
+}
+
+.filter-bar__group button {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.filter-bar__group button.is-active {
+  background: var(--surface);
+  color: inherit;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.filter-bar__clear {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.filter-bar__clear:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* --- list --- */
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--input-bg);
+}
+
+.task-item__main {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+  cursor: pointer;
+}
+
+.task-item.is-done .task-item__title {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.badge--high {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.badge--medium {
+  background: rgba(234, 179, 8, 0.15);
+  color: #facc15;
+}
+
+.badge--low {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.task-item__remove {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.task-item__remove:hover {
+  color: var(--danger);
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 1.5rem 0;
+}
+
+.app__footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+}
