@@ -1,15 +1,9 @@
 import { test, expect, type Page } from "@playwright/test";
 
-async function addTask(
-  page: Page,
-  title: string,
-  priority?: "High" | "Medium" | "Low",
-) {
+async function addTask(page: Page, title: string, priority?: "High" | "Medium" | "Low") {
   await page.getByLabel("Task title").fill(title);
   if (priority) {
-    await page
-      .getByLabel("Priority", { exact: true })
-      .selectOption({ label: priority });
+    await page.getByLabel("Priority", { exact: true }).selectOption({ label: priority });
   }
   await page.getByRole("button", { name: "Add" }).click();
 }
@@ -103,11 +97,7 @@ test("clears completed tasks while keeping active ones", async ({ page }) => {
   await expect(page.getByTestId("task-item")).toHaveCount(1);
 });
 
-test('"Clear completed" is disabled when nothing is completed', async ({
-  page,
-}) => {
+test('"Clear completed" is disabled when nothing is completed', async ({ page }) => {
   await addTask(page, "Just one");
-  await expect(
-    page.getByRole("button", { name: "Clear completed" }),
-  ).toBeDisabled();
+  await expect(page.getByRole("button", { name: "Clear completed" })).toBeDisabled();
 });

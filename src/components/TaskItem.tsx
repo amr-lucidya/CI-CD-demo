@@ -1,20 +1,20 @@
-import type { Task } from '../lib/tasks'
+import type { Task } from "../lib/tasks";
 
 interface TaskItemProps {
-  task: Task
-  onToggle: (id: string) => void
-  onRemove: (id: string) => void
+  task: Task;
+  onToggle: (id: string) => void;
+  onRemove: (id: string) => void;
 }
 
 export function TaskItem({ task, onToggle, onRemove }: TaskItemProps) {
   return (
-    <li className={`task-item ${task.done ? 'is-done' : ''}`} data-testid="task-item">
+    <li className={`task-item ${task.done ? "is-done" : ""}`} data-testid="task-item">
       <label className="task-item__main">
         <input
           type="checkbox"
           checked={task.done}
           onChange={() => onToggle(task.id)}
-          aria-label={`Mark "${task.title}" as ${task.done ? 'active' : 'complete'}`}
+          aria-label={`Mark "${task.title}" as ${task.done ? "active" : "complete"}`}
         />
         <span className="task-item__title">{task.title}</span>
       </label>
@@ -27,5 +27,5 @@ export function TaskItem({ task, onToggle, onRemove }: TaskItemProps) {
         ✕
       </button>
     </li>
-  )
+  );
 }

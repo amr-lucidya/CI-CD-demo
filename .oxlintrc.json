@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "react-perf", "typescript", "unicorn", "oxc"],
+  "plugins": ["react", "typescript", "unicorn", "oxc"],
   "env": {
     "browser": true,
     "es2024": true
@@ -14,7 +14,8 @@
     "no-console": "warn",
     "no-debugger": "error",
     "eqeqeq": "error",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "react/react-in-jsx-scope": "off"
   },
   "ignorePatterns": ["dist", "node_modules", "coverage", "playwright-report"]
 }
