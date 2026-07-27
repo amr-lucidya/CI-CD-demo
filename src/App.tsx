@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="app">
       <header className="app__header">
-        <h1>Demo</h1>
+        <h1>🚀 Task</h1>
         <p className="app__subtitle">A tiny app for a CI/CD demo</p>
       </header>
 
