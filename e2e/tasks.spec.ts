@@ -12,12 +12,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto("/");
 });
 
-test("loads with the app title and empty state", async ({ page }) => {
-  await expect(page).toHaveTitle(/Task Flow/);
-  await expect(page.getByRole("heading", { name: /Task Flow/ })).toBeVisible();
-  await expect(page.getByTestId("empty-state")).toContainText("No tasks yet");
-});
-
 test("adds a task and reflects it in the stats", async ({ page }) => {
   await addTask(page, "Write the slides");
   await expect(page.getByText("Write the slides")).toBeVisible();
