@@ -19,7 +19,7 @@ import { StatsBar } from "./components/StatsBar";
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [filter, setFilter] = useState<Filter>("all");
+  const [filter, setFilter] = useState<Filter>("alls");
 
   function handleAdd(title: string, priority: Priority) {
     setTasks((prev) => [...prev, createTask(title, priority, prev.length)]);
