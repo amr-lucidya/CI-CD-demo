@@ -19,19 +19,22 @@ import { StatsBar } from "./components/StatsBar";
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [filter, setFilter] = useState<Filter>("alls");
+  const [filter, setFilter] = useState<Filter>("all");
 
   function handleAdd(title: string, priority: Priority) {
     setTasks((prev) => [...prev, createTask(title, priority, prev.length)]);
   }
 
   const stats = useMemo(() => taskStats(tasks), [tasks]);
-  const visible = useMemo(() => sortTasks(filterTasks(tasks, filter)), [tasks, filter]);
+  const visible = useMemo(
+    () => sortTasks(filterTasks(tasks, filter)),
+    [tasks, filter],
+  );
 
   return (
     <div className="app">
       <header className="app__header">
-        <h1>🚀 Task Flow</h1>
+        <h1>🚀  Flow</h1>
         <p className="app__subtitle">A tiny app for a CI/CD demo</p>
       </header>
 
@@ -67,7 +70,9 @@ function App() {
         )}
       </main>
 
-      <footer className="app__footer">Built with Vite · React · TypeScript</footer>
+      <footer className="app__footer">
+        Built with Vite · React · TypeScript
+      </footer>
     </div>
   );
 }
