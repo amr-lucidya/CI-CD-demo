@@ -92,7 +92,7 @@ test("clears completed tasks while keeping active ones", async ({ page }) => {
   await expect(clearButton).toBeEnabled();
   await clearButton.click();
 
-  await expect(page.getByText("Keep me")).toBeVisible();
+  await expect(page.getByText("Keep")).toBeVisible();
   await expect(page.getByText("Clear me")).toBeHidden();
   await expect(page.getByTestId("task-item")).toHaveCount(1);
 });
